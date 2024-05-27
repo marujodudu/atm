@@ -1,0 +1,73 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.account-box {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-pic {
+    border-radius: 50%;
+}
+
+.account-name {
+    font-size: 1.2em;
+    margin-left: 10px;
+}
+
+.balance-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.balance-title {
+    font-size: 1em;
+    color: #555;
+}
+
+.balance-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#account-balance {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+#toggle-balance {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+#toggle-balance img {
+    width: 20px;
+    height: 20px;
+}
