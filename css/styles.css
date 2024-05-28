@@ -1,0 +1,58 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.bg {
+    background-image: url('../assets/bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.login {
+    background-color: rgba(43, 0, 255, 0.318); /* Usar rgba para opacidade */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    margin-top: 20px;
+}
+
+.login h4 {
+    color: white;
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+.login .form-floating {
+    margin-bottom: 10px;
+}
+
+
+.login .forgot-password {
+    display: block;
+    margin-bottom: 40px;
+    font-size: 0.9em;
+    color: #ffffff;
+    text-decoration: underline;
+}
