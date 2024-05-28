@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela inicial</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/tela-inicial.css">
+</head>
+<body class="bg">
+    <div class="outer-container">
+        <div class="inner-container">
+            <div class="left-section">
+                <div class="account-box">
+                    <button id="openModalButton" class="profile-section" style="border: none; background-color: transparent;">                        
+                        <img src="../assets/perfil.png" alt="Foto de Perfil" class="profile-pic">
+                        <span class="account-name">Fulano Camargo</span>
+                    </button>
+                    <hr class="separator">
+                    <div class="balance-section">
+                        <span class="balance-title">Saldo da conta-corrente</span>
+                        <div class="balance-value">
+                            <span id="account-balance">R$ 1.092,05</span>
+                            <button id="toggle-balance" class="btn btn-link">
+                                <img id="eye-icon" src="../assets/olho.png" alt="Olho aberto">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="transactions-box">
+                    <h3 class="transactions-title">Resumo das últimas transações</h3>
+                    <hr class="separator">
+                    <div class="transactions-list">
+                        <div class="transaction">
+                            <span class="transaction-date">28/05/2024 14:32</span>
+                            <span class="transaction-description">Você fez uma transferência pix para Ciclano da Silva.</span>
+                            <span class="transaction-amount negative">-R$ 200,00</span>
+                        </div>
+                        <div class="transaction">
+                            <span class="transaction-date">27/05/2024 10:20</span>
+                            <span class="transaction-description">Você recebeu uma transferência bancária de C.A.F SERVIÇOS VETERINÁRIOS.</span>
+                            <span class="transaction-amount positive">+R$ 350,00</span>
+                        </div>
+                        <div class="transaction">
+                            <span class="transaction-date">27/05/2024 09:29</span>
+                            <span class="transaction-description">Você recebeu uma transferência pix de Beltrano Cunha.</span>
+                            <span class="transaction-amount positive">+R$ 200,00</span>
+                        </div>
+                        <div class="transaction">
+                            <span class="transaction-date">26/05/2024 07:17</span>
+                            <span class="transaction-description">Você fez uma transferência pix para Maninho Soares.</span>
+                            <span class="transaction-amount negative">-R$ 20,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="right-section">
+                <h3 class="functionalities-title">Verifique também</h3>
+                <ul class="functionalities-list">
+                    <li class="button-item" onclick="window.location.href='poupanca.html'">
+                        <img src="../assets/cofrinho.png" alt="Conta Poupança" class="icon-large">
+                        <span>Conta Poupança</span>
+                    </li>
+                    <li class="button-item" onclick="window.location.href='extrato.html'">
+                        <img src="../assets/extrato-bancario.png" alt="Extrato" class="icon-large">
+                        <span>Extrato</span>
+                    </li>
+                </ul>
+
+                <h3 class="more-title">Mais</h3>
+                <ul class="more-functionalities">
+                    <li class="button-item" onclick="openPixModal()">
+                        <img src="../assets/pix.png" alt="PIX" class="icon-large">
+                        <span>PIX</span>
+                    </li>
+                    <li class="button-item" onclick="window.location.href='boleto.html'">
+                        <img src="../assets/boleto.png" alt="Pagar Boleto" class="icon-large">
+                        <span>Pagar Boleto</span>
+                    </li>
+                    <li class="button-item" onclick="window.location.href='transferencia.html'">
+                        <img src="../assets/transferencia.png" alt="Transferência Bancária" class="icon-large">
+                        <span>Transferência Bancária</span>
+                    </li>
+                    <li class="button-item" onclick="window.location.href='emprestimo.html'">
+                        <img src="../assets/emprestimo.png" alt="Empréstimos e Financiamento" class="icon-large">
+                        <span>Empréstimos e Financiamento</span>
+                    </li>
+                    <li class="button-item" onclick="window.location.href='suporte.html'">
+                        <img src="../assets/suporte.png" alt="Suporte ao Cliente" class="icon-large">
+                        <span>Suporte ao Cliente</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--Modal Perfil-->
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="profileModalLabel">Editar Perfil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Conteúdo do modal -->
+                    <div class="mb-3">
+                        <label for="inputFotoPerfil" class="form-label">Alterar foto de perfil</label>
+                        <input type="file" class="form-control" id="inputFotoPerfil">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputNome" class="form-label">Alterar nome</label>
+                        <input type="text" class="form-control" id="inputNome">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputSenha" class="form-label">Alterar senha</label>
+                        <input type="password" class="form-control" id="inputSenha">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputSenha" class="form-label">Confirmar senha senha</label>
+                        <input type="password" class="form-control" id="inputSenha">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-success" style="background-color: #5c6bc0; border-color: #5c6bc0;">Salvar alterações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal PIX -->
+<div class="modal fade" id="pixModal" tabindex="-1" aria-labelledby="pixModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pixModalLabel">PIX</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="inputChavePix" class="form-label">Chave PIX</label>
+                    <input type="text" class="form-control" id="inputChavePix" placeholder="E-mail, telefone, chave aleatória, CPF ou CNPJ">
+                </div>
+                <div class="mb-3">
+                    <label for="selectConta" class="form-label">Selecione a conta</label>
+                    <select class="form-select" id="selectConta">
+                        <option value="contaCorrente">Conta-corrente</option>
+                        <option value="contaPoupanca">Conta-poupança</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="moneyInputPix" class="form-label">Valor da transação</label>
+                    <input type="text" id="moneyInputPix" class="form-control" inputmode="numeric" pattern="^\d+(\.\d{1,2})?$" placeholder="R$ 0,00">
+                  </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-success btn-confirm" style="background-color: #5c6bc0; border-color: #5c6bc0;" onclick="showConfirmationPopup()">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pop-up de confirmação -->
+<div class="modal fade" id="confirmationPopup" tabindex="-1" aria-labelledby="confirmationPopupLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmationPopupLabel">Confirmação</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body mb-3">
+                Transação PIX confirmada!
+                <div class="comprovante mt-3">
+                <button type="button" class="btn btn-success">Ver comprovante</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" style="background-color: #f06292;" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>  
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="../js/script.js"></script>
+</html>

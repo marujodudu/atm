@@ -1,0 +1,175 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.bg {
+    background-image: url('../assets/bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 650px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 100px; /* Aumentar o padding */
+}
+
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.separator {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.balance-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#account-balance {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+#toggle-balance {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+#toggle-balance img {
+    width: 20px;
+    height: 20px;
+}
+
+.transactions-box {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    max-height: 500px; 
+    overflow-y: auto;
+}
+
+.transactions-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.transactions-list {
+    max-height: 400px; 
+    overflow-y: auto;
+}
+
+.transaction {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.transaction-date {
+    font-size: 0.8em;
+    color: #888;
+}
+
+.transaction-description {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.transaction-amount {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.transaction-amount.negative {
+    color: red;
+}
+
+.transaction-amount.positive {
+    color: green;
+}
+
+.transactions-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.transactions-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.transactions-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.functionalities-title, .more-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.functionalities-list, .more-functionalities {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.functionalities-list li, .more-functionalities li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: 150px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+}

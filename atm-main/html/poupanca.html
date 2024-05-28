@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poupança</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/poupanca.css">
+</head>
+<body class="bg">
+    <div class="container">
+        <div class="header">
+            <a href="tela-inicial.html" class="btn btn-primary back-button" style="background-color: #f06292;">Voltar</a>
+            <h2>Qual o valor da aplicação?</h2>
+            <p class="saldo-disponivel">Saldo disponível: R$ 1.092,05</p>
+            <hr class="separator">
+        </div>
+        <form id="aplicacao-form">
+            <div class="mt-3">
+                <label for="moneyInput" class="form-label">Valor da aplicação</label>
+                <input type="text" id="moneyInput" class="form-control" inputmode="numeric" pattern="^\d+(\.\d{1,2})?$" placeholder="R$ 0,00">
+              </div>
+            <div class="form-group mt-3 mb-3">
+                <label for="data-aplicacao">Data da aplicação</label>
+                <input type="date" class="form-control" id="data-aplicacao">
+            </div>
+            <button type="submit mt-3 mb-3" class="btn btn-primary" style="background-color: #5c6bc0; border-color: #5c6bc0;">Continuar</button>
+            <div id="aplicacao-mensal-container" style="display: none;">
+                <div class="mt-3">
+                    <label for="moneyInputMensal" class="form-label">Valor da aplicação</label>
+                    <input type="text" id="moneyInputMensal" class="form-control" inputmode="numeric" pattern="^\d+(\.\d{1,2})?$" placeholder="R$ 0,00">
+                  </div>
+                <div class="form-group mt-3">
+                    <label for="dia-aplicacao">Dia da aplicação</label>
+                    <select class="form-select" id="dia-aplicacao">
+                        <option selected disabled>Escolha o dia</option>
+                        <option value="1">Todo dia 5</option>
+                        <option value="2">Todo dia 15</option>
+                        <option value="3">Todo dia 20</option>
+                        <option value="4">Todo dia 25</option>
+                        <option value="4">Todo dia 30</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-check mt-3">
+                <input class="form-check-input" type="checkbox" id="aplicacao-mensal-check">
+                <label class="form-check-label" for="aplicacao-mensal-check">Aplicação mensal</label>
+            </div>
+            <small>Escolha o valor e a melhor data para aplicar seu dinheiro automaticamente todo mês.</small>
+        </form>
+    </div>
+    <script src="../js/poupanca.js"></script>
+</body>
+</html>
